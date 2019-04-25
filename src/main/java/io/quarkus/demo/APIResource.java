@@ -15,7 +15,8 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @Path("/api")
 public class APIResource {
 
-    @Inject @ConfigProperty(name = "greeting.message")
+    @Inject
+    @ConfigProperty(name = "greeting.message")
     Optional<String> message;
 
     @GET
@@ -29,9 +30,9 @@ public class APIResource {
     @Path("/products")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Product> getProducts() {
-        return Arrays.asList(new Product("01","Watch","A cool smart watch",200.0),
-            new Product("02","Phone","A cool smart phone",300.0),
-            new Product("03","TV","A cool smart TV",1000.0),
-            new Product("04","Pet","A cool smart Pet",400.0));
+        return Arrays.asList(new Product("01", "Watch", "A cool smart watch", 200.0),
+                new Product("02", "Phone", "A cool smart phone", 300.0),
+                new Product("03", "TV", "A cool smart TV", 1000.0),
+                new Product("04", "Pet", "A cool smart Pet", 400.0));
     }
 }
