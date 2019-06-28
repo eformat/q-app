@@ -6,3 +6,4 @@
 target/
 quarkus.log
 .idea/
+*.iml
